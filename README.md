@@ -1,40 +1,36 @@
 # DockerCLI
-Comandos de docker
-What it is DOCKER? : Ejecucion de la instancia de una imagen
-Docker is an open source containerzation engine
+## Comandos de docker
+- Ejecucion de la instancia de una imagen
+- Docker is an open containerzation engine
 
 docker images : ver imagenes
 docker run hello-world
  
-docker search ubuntu: buscar imagenes
+docker search ubuntu buscar imagenes
 
-----------------------------------------------RUN CONTAINERS---------------------------------------------------
-~ docker run ubuntu echo 'hola mundo'
-~ docker run --name name_i_want hello-world
+## RUN CONTAINERS
+run ubuntu echo 'hola mundo'
+docker run --name name_i_want hello-world
 
 
 
----------------------------------------------VIEW CONTAINER PROCESSES------------------------------------------
-~ docker ps -a (all)          			historial
-~ docker ps -aq :				muesta los id de los contenedores
-~ docker inspect <ID or name_container> :	show config container
+## VIEW CONTAINER PROCESSES
+ps -a (all)          			historial
+docker ps -aq :				muesta los id de los contenedores
+docker inspect <ID or name_container> :	show config container
 
-  
-  
-------------------------------------------STOP AND START PROCESS-----------------------------------------------
-~ docker start  #
-~ docker stop #
+## STOP AND START PROCESS
+docker start  #
+docker stop #
 
-  
------------------------------------------DELETE CONTAINER-----------------------------------------------------
-~ docker rm <ID o nombre> (borro un contenedor)
-~ docker rm  $(sudo docker ps -aq) elimina cada id, pasamos como parametro la lista de los id`s
-~ docker rm $(sudo docker ps -aq) -f para forzar pararlo y eliminarlo
-~ docker container prune (borro todos lo contenedores que esten parados)
-  
-  
+## DELETE CONTAINER
+docker rm <ID o nombre> (borro un contenedor)
+docker rm  $(sudo docker ps -aq) elimina cada id, pasamos como parametro la lista de los id`s
 
-----------------------------------------MODO INTERACTIVO-------------------------------------------------------
+docker rm $(sudo docker ps -aq) -f para forzar pararlo y eliminarlo
+docker container prune (borro todos lo contenedores que esten parados)
+
+## MODO INTERACTIVO
 ~ docker run -it ubuntu bash  :     -it: interactiva,  comando: bash
 ~ docker run it debian  
 
@@ -94,12 +90,12 @@ docker build  -t imagendiego .
 
 docker run -p 4000:80 -d --name diegoapp  imagendiego
 
----------------------------------------------Bind Mount-------------------------------
+## Bind Mount
 ~ docker run --name  db mongo
 ~ docker ps
 ~ docker exec -it db bash
 #Shell
-# mongo: binario que viene con mongo
-# db.users.insert({"nombre": diego})
+ mongo: binario que viene con mongo
+ db.users.insert({"nombre": diego})
 
 ~ docker logs db
